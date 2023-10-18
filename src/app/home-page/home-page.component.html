@@ -1,60 +1,592 @@
-
-<body>
-  <!-- ======= Hero Section ======= -->
+<!-- <body>
   <section id="hero" class="d-flex align-items-center">
     <div class="container">
       <h1>Welcome to Medilab</h1>
       <h2>We are team of talented designers making websites with </h2>
       <a href="#about" class="btn-get-started scrollto">Get Started</a>
     </div>
-  </section><!-- End Hero -->
+  </section>
+</body> -->
 
-    <!-- ======= Why Us Section ======= -->
-    <section id="why-us" class="why-us">
+<body>
+  <div class="row">
+    <div class="col-1"></div>
+    <div class="col">
+      <div style="height: 150px; display: flex; align-items: center; justify-content: center;">
+        <h1 class="logo me-auto"><a href="index.html">Medilab</a></h1>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="row" style="background: #111478;">
+    <div class="col">
+      <div>
+        <div class="container"
+          style="padding: 10px; display: flex; align-items: center; text-align: center; color: white;">
+          <div class="col" [ngClass]="{'active': activeDiv === 0}">
+            <span aria-label="Restart the Diabetes UK Risk Tool">Start</span>
+          </div>
+          <div class="col" [ngClass]="{'active': activeDiv === 1}"><span>1</span></div>
+          <div class="col" [ngClass]="{'active': activeDiv === 2}"><span>2</span></div>
+          <div class="col" [ngClass]="{'active': activeDiv === 3}"><span>3</span></div>
+          <div class="col" [ngClass]="{'active': activeDiv === 4}"><span>4</span></div>
+          <div class="col" [ngClass]="{'active': activeDiv === 5}"><span>5</span></div>
+          <div class="col" [ngClass]="{'active': activeDiv === 6}"><span>6</span></div>
+          <div class="col" [ngClass]="{'active': activeDiv === 7}"><span>7</span></div>
+          <div class="col" [ngClass]="{'active': activeDiv === 8}"><span>8</span></div>
+          <div class="col" [ngClass]="{'active': activeDiv === 9}"><span>9</span></div>
+          <div class="col" [ngClass]="{'active': activeDiv === 10}"><span>10</span></div>
+          <div class="col" [ngClass]="{'active': activeDiv === 11}"><span>11</span></div>
+          <div class="col" [ngClass]="{'active': activeDiv === 12}"><span>12</span></div>
+          <div class="col" [ngClass]="{'active': activeDiv === 13}"><span>13</span></div>
+          <div class="col" [ngClass]="{'active': activeDiv === 14}"><span>14</span></div>
+          <div class="col" [ngClass]="{'active': activeDiv === 15}"><span>15</span></div>
+          <div [ngClass]="{'active': activeDiv === 16}">
+            <span>Results</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row">
+    <div id="hero" *ngIf="activeSection === 0">
+      <br>
       <div class="container">
+        <h1>Welcome to Medilab start</h1>
+        <h2>We are a team of talented designers making websites with Bootstrap</h2>
 
-        <div class="row">
-          <div class="col-lg-4 d-flex align-items-stretch">
-            <div class="content">
-              <h3>Why Choose Medilab?</h3>
-              <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Duis aute irure dolor in reprehenderit
-                Asperiores dolores sed et. Tenetur quia eos. Autem tempore quibusdam vel necessitatibus optio ad corporis.
-              </p>
-              <div class="text-center">
-                <a href="#" class="more-btn">Learn More <i class="bx bx-chevron-right"></i></a>
+        <a href="javascript:void(0);" (click)="setActiveSectionAndDiv(1)" class="btn-get-started scrollto">เริ่มต้น</a>
+      </div>
+    </div>
+
+    <div *ngIf="activeSection === 1">
+      <div class="container">
+        <br>
+        <div class="card shadow mb-4">
+          <!-- <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">bps</h6>
+          </div> -->
+          <div class="card-body">
+            <div>
+              <h2>Welcome to Medilab 1</h2>
+              <h2>We are a team of talented designers making websites with Bootstrap</h2>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label for="bps">bps :</label>
+                <span id="bpsValue"> {{ bps }}</span>
+                <input name="bps" type="range" class="form-range" id="bps" min="0" max="200" step="1" [(ngModel)]="bps">
               </div>
             </div>
           </div>
-          <div class="col-lg-8 d-flex align-items-stretch">
-            <div class="icon-boxes d-flex flex-column justify-content-center">
-              <div class="row">
-                <div class="col-xl-4 d-flex align-items-stretch">
-                  <div class="icon-box mt-4 mt-xl-0">
-                    <i class="bx bx-receipt"></i>
-                    <h4>Corporis voluptates sit</h4>
-                    <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip</p>
-                  </div>
-                </div>
-                <div class="col-xl-4 d-flex align-items-stretch">
-                  <div class="icon-box mt-4 mt-xl-0">
-                    <i class="bx bx-cube-alt"></i>
-                    <h4>Ullamco laboris ladore pan</h4>
-                    <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt</p>
-                  </div>
-                </div>
-                <div class="col-xl-4 d-flex align-items-stretch">
-                  <div class="icon-box mt-4 mt-xl-0">
-                    <i class="bx bx-images"></i>
-                    <h4>Labore consequatur</h4>
-                    <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p>
-                  </div>
+        </div>
+        <a href="javascript:void(0);" (click)="setActiveSectionAndDiv(0)" class="appointment-btn scrollto">ย้อนกลับ</a>
+        <a href="javascript:void(0);" (click)="setActiveSectionAndDiv(2)" class="appointment-btn scrollto">ถัดไป</a>
+      </div>
+    </div>
+
+    <div *ngIf="activeSection === 2">
+      <div class="container">
+        <br>
+        <div class="card shadow mb-4">
+          <!-- <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">bpd</h6>
+          </div> -->
+          <div class="card-body">
+            <div>
+              <h2>Welcome to Medilab 2</h2>
+              <h2>We are a team of talented designers making websites with Bootstrap</h2>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label for="bpd">bpd :</label>
+                <span id="bpdValue"> {{ bpd }}</span>
+                <input name="bpd" type="range" class="form-range" id="bpd" min="0" max="200" step="1" [(ngModel)]="bpd">
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="javascript:void(0);" (click)="setActiveSectionAndDiv(1)" class="appointment-btn scrollto">ย้อนกลับ</a>
+        <a href="javascript:void(0);" (click)="setActiveSectionAndDiv(3)" class="appointment-btn scrollto">ถัดไป</a>
+      </div>
+    </div>
+
+    <div *ngIf="activeSection === 3">
+      <div class="container">
+        <br>
+        <div class="card shadow mb-4">
+          <!-- <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">bw</h6>
+          </div> -->
+          <div class="card-body">
+            <div>
+              <h2>Welcome to Medilab 3</h2>
+              <h2>We are a team of talented designers making websites with Bootstrap</h2>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label for="bw">bw :</label>
+                <span id="bwValue"> {{ bw }}</span>
+                <input name="bw" type="range" class="form-range" id="bw" min="0" max="200" step="1" [(ngModel)]="bw">
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="javascript:void(0);" (click)="setActiveSectionAndDiv(2)" class="appointment-btn scrollto">ย้อนกลับ</a>
+        <a href="javascript:void(0);" (click)="setActiveSectionAndDiv(4)" class="appointment-btn scrollto">ถัดไป</a>
+      </div>
+    </div>
+
+    <div *ngIf="activeSection === 4">
+      <div class="container">
+        <br>
+        <div class="card shadow mb-4">
+          <!-- <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">height</h6>
+          </div> -->
+          <div class="card-body">
+            <div>
+              <h2>Welcome to Medilab 3</h2>
+              <h2>We are a team of talented designers making websites with Bootstrap</h2>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label for="height">height :</label>
+                <span id="heightValue"> {{ height }}</span>
+                <input name="height" type="range" class="form-range" id="height" min="0" max="200" step="1"
+                  [(ngModel)]="height">
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="javascript:void(0);" (click)="setActiveSectionAndDiv(3)" class="appointment-btn scrollto">ย้อนกลับ</a>
+        <a href="javascript:void(0);" (click)="setActiveSectionAndDiv(5)" class="appointment-btn scrollto">ถัดไป</a>
+      </div>
+    </div>
+
+    <div *ngIf="activeSection === 5">
+      <div class="container">
+        <br>
+        <div class="card shadow mb-4">
+          <!-- <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">fbs</h6>
+          </div> -->
+          <div class="card-body">
+            <div>
+              <h2>Welcome to Medilab 5</h2>
+              <h2>We are a team of talented designers making websites with Bootstrap</h2>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label for="fbs">fbs :</label>
+                <span id="fbsValue"> {{ fbs }}</span>
+                <input name="fbs" type="range" class="form-range" id="fbs" min="0" max="300" step="1" [(ngModel)]="fbs">
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="javascript:void(0);" (click)="setActiveSectionAndDiv(4)" class="appointment-btn scrollto">ย้อนกลับ</a>
+        <a href="javascript:void(0);" (click)="setActiveSectionAndDiv(6)" class="appointment-btn scrollto">ถัดไป</a>
+      </div>
+    </div>
+
+    <div *ngIf="activeSection === 6">
+      <div class="container">
+        <br>
+        <div class="card shadow mb-4">
+          <!-- <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">bmi</h6>
+          </div> -->
+          <div class="card-body">
+            <div>
+              <h2>Welcome to Medilab 6</h2>
+              <h2>We are a team of talented designers making websites with Bootstrap</h2>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label for="bmiz">bmi :</label>
+                <span id="bmizValue"> {{ bmiz }}</span>
+                <input name="bmiz" type="range" class="form-range" id="bmiz" min="0" max="200" step="0.001"
+                  [(ngModel)]="bmiz">
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="javascript:void(0);" (click)="setActiveSectionAndDiv(5)" class="appointment-btn scrollto">ย้อนกลับ</a>
+        <a href="javascript:void(0);" (click)="setActiveSectionAndDiv(7)" class="appointment-btn scrollto">ถัดไป</a>
+      </div>
+    </div>
+
+    <div *ngIf="activeSection === 7">
+      <div class="container">
+        <br>
+        <div class="card shadow mb-4">
+          <!-- <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">tg</h6>
+          </div> -->
+          <div class="card-body">
+            <div>
+              <h2>Welcome to Medilab 7</h2>
+              <h2>We are a team of talented designers making websites with Bootstrap</h2>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label for="tg">tg :</label>
+                <span id="tgValue"> {{ tg }}</span>
+                <input name="tg" type="range" class="form-range" id="tg" min="0" max="1000" step="1" [(ngModel)]="tg">
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="javascript:void(0);" (click)="setActiveSectionAndDiv(6)" class="appointment-btn scrollto">ย้อนกลับ</a>
+        <a href="javascript:void(0);" (click)="setActiveSectionAndDiv(8)" class="appointment-btn scrollto">ถัดไป</a>
+      </div>
+    </div>
+
+    <div *ngIf="activeSection === 8">
+      <div class="container">
+        <br>
+        <div class="card shadow mb-4">
+          <!-- <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">hdl</h6>
+          </div> -->
+          <div class="card-body">
+            <div>
+              <h2>Welcome to Medilab 8</h2>
+              <h2>We are a team of talented designers making websites with Bootstrap</h2>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label for="hdl">hdl :</label>
+                <span id="hdlValue"> {{ hdl }}</span>
+                <input name="hdl" type="range" class="form-range" id="hdl" min="0" max="100" step="1" [(ngModel)]="hdl">
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="javascript:void(0);" (click)="setActiveSectionAndDiv(7)" class="appointment-btn scrollto">ย้อนกลับ</a>
+        <a href="javascript:void(0);" (click)="setActiveSectionAndDiv(9)" class="appointment-btn scrollto">ถัดไป</a>
+      </div>
+    </div>
+
+    <div *ngIf="activeSection === 9">
+      <div class="container">
+        <br>
+        <div class="card shadow mb-4">
+          <!-- <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">creatinine</h6>
+          </div> -->
+          <div class="card-body">
+            <div>
+              <h2>Welcome to Medilab 9</h2>
+              <h2>We are a team of talented designers making websites with Bootstrap</h2>
+            </div>
+            <div class="col">
+              <div class="col">
+                <div class="form-group">
+                  <label for="creatinine">creatinine :</label>
+                  <span id="creatinineValue"> {{ creatinine }}</span>
+                  <input name="creatinine" type="range" class="form-range" id="creatinine" min="0" max="10" step="0.01"
+                    [(ngModel)]="creatinine">
                 </div>
               </div>
-            </div><!-- End .content-->
+            </div>
+          </div>
+        </div>
+        <a href="javascript:void(0);" (click)="setActiveSectionAndDiv(8)" class="appointment-btn scrollto">ย้อนกลับ</a>
+        <a href="javascript:void(0);" (click)="setActiveSectionAndDiv(10)" class="appointment-btn scrollto">ถัดไป</a>
+      </div>
+    </div>
+
+    <div *ngIf="activeSection === 10">
+      <div class="container">
+        <br>
+        <div class="card shadow mb-4">
+          <!-- <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">hba1c</h6>
+          </div> -->
+          <div class="card-body">
+            <div>
+              <h2>Welcome to Medilab 10</h2>
+              <h2>We are a team of talented designers making websites with Bootstrap</h2>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label for="hba1c">hba1c :</label>
+                <span id="hba1cValue"> {{ hba1c }}</span>
+                <input name="hba1c" type="range" class="form-range" id="hba1c" min="0" max="20" step="0.001"
+                  [(ngModel)]="hba1c">
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="javascript:void(0);" (click)="setActiveSectionAndDiv(9)" class="appointment-btn scrollto">ย้อนกลับ</a>
+        <a href="javascript:void(0);" (click)="setActiveSectionAndDiv(11)" class="appointment-btn scrollto">ถัดไป</a>
+      </div>
+    </div>
+
+    <div *ngIf="activeSection === 11">
+      <div class="container">
+        <br>
+        <div class="card shadow mb-4">
+          <!-- <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">fh</h6>
+          </div> -->
+          <div class="card-body">
+            <div>
+              <h2>Welcome to Medilab 11</h2>
+              <h2>We are a team of talented designers making websites with Bootstrap</h2>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <!-- <label for="fh">fh :</label> -->
+                <div>
+                  <input type="radio" id="fh1" name="fh" [(ngModel)]="fh" [value]="0">
+                  <label for="fh1">Option 1</label>
+                </div>
+                <div>
+                  <input type="radio" id="fh2" name="fh" [(ngModel)]="fh" [value]="1">
+                  <label for="fh2">Option 2</label>
+                </div>
+                <input type="hidden" [ngModel]="fh" name="fh" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="javascript:void(0);" (click)="setActiveSectionAndDiv(10)" class="appointment-btn scrollto">ย้อนกลับ</a>
+        <a href="javascript:void(0);" (click)="setActiveSectionAndDiv(12)" class="appointment-btn scrollto">ถัดไป</a>
+      </div>
+    </div>
+
+    <div *ngIf="activeSection === 12">
+      <div class="container">
+        <br>
+        <div class="card shadow mb-4">
+          <!-- <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">waist</h6>
+          </div> -->
+          <div class="card-body">
+            <div>
+              <h2>Welcome to Medilab 12</h2>
+              <h2>We are a team of talented designers making websites with Bootstrap</h2>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label for="waist">waist :</label>
+                <span id="waistValue"> {{ waist }}</span>
+                <input name="waist" type="range" class="form-range" id="waist" min="0" max="200" step="1"
+                  [(ngModel)]="waist">
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="javascript:void(0);" (click)="setActiveSectionAndDiv(11)" class="appointment-btn scrollto">ย้อนกลับ</a>
+        <a href="javascript:void(0);" (click)="setActiveSectionAndDiv(13)" class="appointment-btn scrollto">ถัดไป</a>
+      </div>
+    </div>
+
+    <div *ngIf="activeSection === 13">
+      <div class="container">
+        <br>
+        <div class="card shadow mb-4">
+          <!-- <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">smoking_type</h6>
+          </div> -->
+          <div class="card-body">
+            <div>
+              <h2>Welcome to Medilab 13</h2>
+              <h2>We are a team of talented designers making websites with Bootstrap</h2>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <!-- <label for="smoking_type_id">smoking_type_id :</label> -->
+                <div>
+                  <input type="radio" id="smoking_type_id1" name="smoking_type_id" [(ngModel)]="smoking_type_id"
+                    [value]="1">
+                  <label for="smoking_type_id1">smoking_type_id 1</label>
+                </div>
+                <div>
+                  <input type="radio" id="smoking_type_id2" name="smoking_type_id" [(ngModel)]="smoking_type_id"
+                    [value]="2">
+                  <label for="smoking_type_id2">smoking_type_id 2</label>
+                </div>
+                <input type="hidden" [ngModel]="smoking_type_id" name="smoking_type_id" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="javascript:void(0);" (click)="setActiveSectionAndDiv(12)" class="appointment-btn scrollto">ย้อนกลับ</a>
+        <a href="javascript:void(0);" (click)="setActiveSectionAndDiv(14)" class="appointment-btn scrollto">ถัดไป</a>
+      </div>
+    </div>
+
+    <div *ngIf="activeSection === 14">
+      <div class="container">
+        <br>
+        <div class="card shadow mb-4">
+          <!-- <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">drinking_type</h6>
+          </div> -->
+          <div class="card-body">
+            <div>
+              <h2>Welcome to Medilab 14</h2>
+              <h2>We are a team of talented designers making websites with Bootstrap</h2>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <!-- <label for="drinking_type_id">drinking_type_id :</label> -->
+                <div>
+                  <input type="radio" id="drinking_type_id1" name="drinking_type_id" [(ngModel)]="drinking_type_id"
+                    [value]="1">
+                  <label for="drinking_type_id1">drinking_type_id 1</label>
+                </div>
+                <div>
+                  <input type="radio" id="drinking_type_id2" name="drinking_type_id" [(ngModel)]="drinking_type_id"
+                    [value]="2">
+                  <label for="drinking_type_id2">drinking_type_id 2</label>
+                </div>
+                <input type="hidden" [ngModel]="drinking_type_id" name="drinking_type_id" />
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="javascript:void(0);" (click)="setActiveSectionAndDiv(13)" class="appointment-btn scrollto">ย้อนกลับ</a>
+        <a href="javascript:void(0);" (click)="setActiveSectionAndDiv(15)" class="appointment-btn scrollto">ถัดไป</a>
+      </div>
+    </div>
+
+    <div *ngIf="activeSection === 15">
+      <div class="container">
+        <br>
+        <div class="card shadow mb-4">
+          <!-- <div class="card-header py-3">
+            <h6 class="m-0 font-weight-bold text-primary">egfr</h6>
+          </div> -->
+          <div class="card-body">
+            <div>
+              <h2>Welcome to Medilab 15</h2>
+              <h2>We are a team of talented designers making websites with Bootstrap</h2>
+            </div>
+            <div class="col">
+              <div class="form-group">
+                <label for="egfr">egfr :</label>
+                <span id="egfrValue"> {{ egfr }}</span>
+                <input name="egfr" type="range" class="form-range" id="egfr" min="0" max="300" step="0.001"
+                  [(ngModel)]="egfr">
+              </div>
+            </div>
+          </div>
+        </div>
+        <a href="javascript:void(0);" (click)="setActiveSectionAndDiv(14)" class="appointment-btn scrollto">ย้อนกลับ</a>
+        <a href="javascript:void(0);" (click)="setActiveSectionAndDiv(16)" class="appointment-btn scrollto">ถัดไป</a>
+      </div>
+    </div>
+
+    <div *ngIf="activeSection === 16">
+      <div class="container">
+        <br>
+        <div class="col">
+          <div class="card bg-light text-black shadow">
+            <div class="card-body">
+              <div class="row">
+                <div class="col">
+                  <div class="row">
+                    <div>
+                      <p>ค่า response คือ:
+                        <span *ngIf="responseValue === 1; else notEqual">เป็น</span>
+                        <ng-template #notEqual>ไม่เป็น</ng-template>
+                      </p>
+                      <h1>Welcome to Medilab Results</h1>
+                    </div>
+                    <div>
+                      <h5>We are a team of talented designers making websites with Bootstrap</h5>
+                    </div>
+                  </div>
+                  <a href="javascript:void(0);" (click)="setActiveSectionAndDiv(0)"
+                    class="appointment-btn scrollto">เริ่มใหม่</a>
+                </div>
+                <div class="col">
+
+                  <div class="card shadow mb-4">
+                    <!-- <div class="card-header py-3">
+                      <h6 class="m-0 font-weight-bold text-primary">Projects</h6>
+                    </div> -->
+                    <div class="card-body">
+                      <h4 class="small font-weight-bold">bps <span class="float-right">{{ bps }}%</span></h4>
+                      <div class="progress mb-4">
+                        <div [ngClass]="{
+                            'bg-danger': bps <= 20,
+                            'bg-warning': bps > 20 && bps <= 40,
+                            'bg-info': bps > 40 && bps <= 60,
+                            'bg-success': bps > 60}" class="progress-bar" role="progressbar" [style.width.%]="bps"
+                          [attr.aria-valuenow]="bps" aria-valuemin="0" aria-valuemax="200"></div>
+                      </div>
+
+                      <h4 class="small font-weight-bold">bpd <span class="float-right">{{ bpd }}%</span></h4>
+                      <div class="progress mb-4">
+                        <div [ngClass]="{
+                          'bg-danger': bpd <= 20,
+                          'bg-warning': bpd > 20 && bpd <= 40,
+                          'bg-info': bpd > 40 && bpd <= 60,
+                          'bg-success': bpd > 60}" class="progress-bar" role="progressbar" [style.width.%]="bpd"
+                          [attr.aria-valuenow]="bpd" aria-valuemin="0" aria-valuemax="200"></div>
+                      </div>
+
+                      <h4 class="small font-weight-bold">bw <span class="float-right">{{ bw }}%</span></h4>
+                      <div class="progress mb-4">
+                        <div [ngClass]="{
+                          'bg-danger': bw <= 20,
+                          'bg-warning': bw > 20 && bw <= 40,
+                          'bg-info': bw > 40 && bw <= 60,
+                          'bg-success': bw > 60}" class="progress-bar" role="progressbar" [style.width.%]="bw"
+                          [attr.aria-valuenow]="bw" aria-valuemin="0" aria-valuemax="200"></div>
+                      </div>
+
+                      <h4 class="small font-weight-bold">height <span class="float-right">{{ height }}%</span></h4>
+                      <div class="progress mb-4">
+                        <div [ngClass]="{
+                          'bg-danger': height <= 20,
+                          'bg-warning': height > 20 && height <= 40,
+                          'bg-info': height > 40 && height <= 60,
+                          'bg-success': height > 60}" class="progress-bar" role="progressbar" [style.width.%]="height"
+                          [attr.aria-valuenow]="height" aria-valuemin="0" aria-valuemax="200"></div>
+                      </div>
+
+                      <h4 class="small font-weight-bold">fbs <span class="float-right">{{ fbs }}%</span></h4>
+                      <div class="progress mb-4">
+                        <div [ngClass]="{
+                          'bg-danger': fbs <= 20,
+                          'bg-warning': fbs > 20 && fbs <= 40,
+                          'bg-info': fbs > 40 && fbs <= 60,
+                          'bg-success': fbs > 60}" class="progress-bar" role="progressbar" [style.width.%]="fbs"
+                          [attr.aria-valuenow]="fbs" aria-valuemin="0" aria-valuemax="300"></div>
+                      </div>
+
+                      <h4 class="small font-weight-bold">bmiz <span class="float-right">{{ bmiz }}%</span></h4>
+                      <div class="progress mb-4">
+                        <div [ngClass]="{
+                          'bg-danger': bmiz <= 20,
+                          'bg-warning': bmiz > 20 && bmiz <= 40,
+                          'bg-info': bmiz > 40 && bmiz <= 60,
+                          'bg-success': bmiz > 60}" class="progress-bar" role="progressbar" [style.width.%]="bmiz"
+                          [attr.aria-valuenow]="bmiz" aria-valuemin="0" aria-valuemax="200"></div>
+                      </div>
+
+                    </div>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+
           </div>
         </div>
 
       </div>
-    </section><!-- End Why Us Section -->
+    </div>
+
+  </div>
+
 </body>

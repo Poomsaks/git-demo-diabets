@@ -6,9 +6,6 @@ import { environment } from 'src/environments/environment';
 @Injectable()
 export class Main_serviceService {
   private databaseName = "DiabetsBandung";
-  // private apiUrl = 'http://localhost:8069/api/per_diabets_bandung';
-  // private api_profile = 'http://localhost:8069/api/get_profile';
-  // private Url_authenticate = 'http://localhost:8069/web/session/authenticate';
   constructor(private http: HttpClient) { }
 
   authenticate(): Observable<any> {
@@ -21,19 +18,25 @@ export class Main_serviceService {
     }, { withCredentials: true });
   }
 
-  public get_profile_test() {
-    return this.http.post<any>("/api/get_profile",
-      {
-        params: {
-          db: this.databaseName
-        }
-      },
-      { withCredentials: true });
-  }
-  per_diabets_bandung(): Observable<any> {
+  per_diabets_bandung(applicationData: any): Observable<any> {
     const payload = {
       params: {
-        db: this.databaseName
+        db: this.databaseName,
+        bps: applicationData.bps,
+        bpd: applicationData.bpd,
+        bw: applicationData.bw,
+        height: applicationData.height,
+        fbs: applicationData.fbs,
+        bmi: applicationData.bmiz,
+        tg: applicationData.tg,
+        hdl: applicationData.hdl,
+        creatinine: applicationData.creatinine,
+        hba1c: applicationData.hba1c,
+        fh: applicationData.fh,
+        waist: applicationData.waist,
+        smoking_type_id: applicationData.smoking_type_id,
+        drinking_type_id: applicationData.drinking_type_id,
+        egfr: applicationData.egfr
       }
     };
     return this.http.post<any>("/api/per_diabets_bandung", payload);

@@ -10,6 +10,7 @@
 # General
 --------------------------------------------------------------*/
 body {
+  overflow: hidden;
   font-family: "Open Sans", sans-serif;
   color: #444444;
 }
@@ -102,6 +103,18 @@ h6 {
   visibility: visible;
   opacity: 1;
 }
+.active {
+  background-color: rgb(255, 255, 255); /* ตั้งสีพื้นหลังเมื่อ active */
+  padding: 5px;
+  color: #000000; /* ตั้งสีข้อความเมื่อ active */
+  border: 2px solid rgb(255, 255, 255); /* ตั้งค่า border ขอบ 2px สี #f8h เมื่อ active */
+  border-radius: 10px; /* เพิ่มมุมโค้งขอบเมื่อ active */
+}
+
+
+
+
+
 
 .datepicker-dropdown {
   padding: 20px !important;

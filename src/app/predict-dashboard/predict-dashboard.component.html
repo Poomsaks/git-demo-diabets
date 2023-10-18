@@ -3,7 +3,6 @@
   <section id="about" class="about">
     <div class="container-fluid">
       <br>
-      <br>
       <div class="row">
         <div class="col-lg">
           <!-- Basic Card Example -->
@@ -13,53 +12,180 @@
             </div>
             <div class="card-body">
               <form (ngSubmit)="submitForm()">
-                <div class="form-group">
-                  <label for="Pregnancies">Pregnancies :</label>
-                  <span id="PregnanciesValue"> {{ Pregnancies }}</span>
-                  <input type="range" class="form-range" id="Pregnancies" min="0" max="10" step="1" [(ngModel)]="Pregnancies">
+                <div class="row">
+                  <div class="col">
+                    <div class="form-group">
+                      <label for="bps">bps :</label>
+                      <span id="bpsValue"> {{ bps }}</span>
+                      <input name="bps" type="range" class="form-range" id="bps" min="0" max="200" step="1"
+                        [(ngModel)]="bps">
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="form-group">
+                      <label for="bpd">bpd :</label>
+                      <span id="bpdValue"> {{ bpd }}</span>
+                      <input name="bpd" type="range" class="form-range" id="bpd" min="0" max="200" step="1"
+                        [(ngModel)]="bpd">
+                    </div>
+                  </div>
                 </div>
-                <div class="form-group">
-                  <label for="Glucose">Glucose :</label>
-                  <span id="GlucoseValue"> {{ Glucose }}</span>
-                  <input type="range" class="form-range" id="Glucose" min="0" max="200" step="1" [(ngModel)]="Glucose">
+                <div class="row">
+                  <div class="col">
+                    <div class="form-group">
+                      <label for="bw">bw :</label>
+                      <span id="bwValue"> {{ bw }}</span>
+                      <input name="bw" type="range" class="form-range" id="bw" min="0" max="200" step="1"
+                        [(ngModel)]="bw">
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="form-group">
+                      <label for="height">height :</label>
+                      <span id="heightValue"> {{ height }}</span>
+                      <input name="height" type="range" class="form-range" id="height" min="0" max="200" step="1"
+                        [(ngModel)]="height">
+                    </div>
+                  </div>
                 </div>
-                <div class="form-group">
-                  <label for="BloodPressure">BloodPressure :</label>
-                  <span id="BloodPressureValue"> {{ BloodPressure }}</span>
-                  <input type="range" class="form-range" id="BloodPressure" min="0" max="100" step="1" [(ngModel)]="BloodPressure">
+                <div class="row">
+                  <div class="col">
+                    <div class="form-group">
+                      <label for="fbs">fbs :</label>
+                      <span id="fbsValue"> {{ fbs }}</span>
+                      <input name="fbs" type="range" class="form-range" id="fbs" min="0" max="300" step="1"
+                        [(ngModel)]="fbs">
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="form-group">
+                      <label for="bmiz">bmi :</label>
+                      <span id="bmizValue"> {{ bmiz }}</span>
+                      <input name="bmiz" type="range" class="form-range" id="bmiz" min="0" max="200" step="0.001"
+                        [(ngModel)]="bmiz">
+                    </div>
+                  </div>
                 </div>
-                <div class="form-group">
-                  <label for="SkinThickness">SkinThickness :</label>
-                  <span id="SkinThicknessValue"> {{ SkinThickness }}</span>
-                  <input type="range" class="form-range" id="SkinThickness" min="0" max="100" step="1"
-                    [(ngModel)]="SkinThickness">
+                <div class="row">
+                  <div class="col">
+                    <div class="form-group">
+                      <label for="tg">tg :</label>
+                      <span id="tgValue"> {{ tg }}</span>
+                      <input name="tg" type="range" class="form-range" id="tg" min="0" max="1000" step="1"
+                        [(ngModel)]="tg">
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="form-group">
+                      <label for="hdl">hdl :</label>
+                      <span id="hdlValue"> {{ hdl }}</span>
+                      <input name="hdl" type="range" class="form-range" id="hdl" min="0" max="100" step="1"
+                        [(ngModel)]="hdl">
+                    </div>
+                  </div>
                 </div>
-                <div class="form-group">
-                  <label for="Insulin">Insulin :</label>
-                  <span id="InsulinValue"> {{ Insulin }}</span>
-                  <input type="range" class="form-range" id="Insulin" min="0" max="1000" step="1" [(ngModel)]="Insulin">
+
+                <div class="row">
+                  <div class="col">
+                    <div class="form-group">
+                      <label for="creatinine">creatinine :</label>
+                      <span id="creatinineValue"> {{ creatinine }}</span>
+                      <input name="creatinine" type="range" class="form-range" id="creatinine" min="0" max="10"
+                        step="0.01" [(ngModel)]="creatinine">
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="form-group">
+                      <label for="hba1c">hba1c :</label>
+                      <span id="hba1cValue"> {{ hba1c }}</span>
+                      <input name="hba1c" type="range" class="form-range" id="hba1c" min="0" max="20" step="0.001"
+                        [(ngModel)]="hba1c">
+                    </div>
+                  </div>
                 </div>
-                <div class="form-group">
-                  <label for="BMIz">BMI :</label>
-                  <span id="BMIzValue"> {{ BMIz }}</span>
-                  <input type="range" class="form-range" id="BMIz" min="0" max="100" step="0.1" [(ngModel)]="BMIz">
+
+                <div class="row">
+                  <div class="col">
+                    <div class="form-group">
+                      <label for="fh">fh :</label>
+                      <div>
+                        <input type="radio" id="fh1" name="fh" [(ngModel)]="fh" [value]="0">
+                        <label for="fh1">Option 1</label>
+                      </div>
+                      <div>
+                        <input type="radio" id="fh2" name="fh" [(ngModel)]="fh" [value]="1">
+                        <label for="fh2">Option 2</label>
+                      </div>
+                      <input type="hidden" [ngModel]="fh" name="fh" />
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="form-group">
+                      <label for="waist">waist :</label>
+                      <span id="waistValue"> {{ waist }}</span>
+                      <input name="waist" type="range" class="form-range" id="waist" min="0" max="200" step="1"
+                        [(ngModel)]="waist">
+                    </div>
+                  </div>
                 </div>
-                <div class="form-group">
-                  <label for="DiabetesPedigreeFunction">DiabetesPedigreeFunction :</label>
-                  <span id="DiabetesPedigreeFunctionValue"> {{ DiabetesPedigreeFunction }}</span>
-                  <input type="range" class="form-range" id="DiabetesPedigreeFunction" min="0" max="5" step="0.001" [(ngModel)]="DiabetesPedigreeFunction">
+
+                <div class="row">
+                  <div class="col">
+                    <div class="form-group">
+                      <label for="smoking_type_id">smoking_type_id :</label>
+                      <div>
+                        <input type="radio" id="smoking_type_id1" name="smoking_type_id" [(ngModel)]="smoking_type_id" [value]="1">
+                        <label for="smoking_type_id1">smoking_type_id 1</label>
+                      </div>
+                      <div>
+                        <input type="radio" id="smoking_type_id2" name="smoking_type_id" [(ngModel)]="smoking_type_id" [value]="2">
+                        <label for="smoking_type_id2">smoking_type_id 2</label>
+                      </div>
+                      <input type="hidden" [ngModel]="smoking_type_id" name="smoking_type_id" />
+                    </div>
+                  </div>
+                  <div class="col">
+                    <div class="form-group">
+                      <label for="drinking_type_id">drinking_type_id :</label>
+                      <div>
+                        <input type="radio" id="drinking_type_id1" name="drinking_type_id" [(ngModel)]="drinking_type_id" [value]="1">
+                        <label for="drinking_type_id1">drinking_type_id 1</label>
+                      </div>
+                      <div>
+                        <input type="radio" id="drinking_type_id2" name="drinking_type_id" [(ngModel)]="drinking_type_id" [value]="2">
+                        <label for="drinking_type_id2">drinking_type_id 2</label>
+                      </div>
+                      <input type="hidden" [ngModel]="drinking_type_id" name="drinking_type_id" />
+                    </div>
+                  </div>
                 </div>
-                <div class="form-group">
-                  <label for="Age">Age :</label>
-                  <span id="AgeValue"> {{ Age }}</span>
-                  <input type="range" class="form-range" id="Age" min="0" max="100" step="1" [(ngModel)]="Age">
+
+                <div class="row">
+                  <div class="col">
+                    <div class="form-group">
+                      <label for="egfr">egfr :</label>
+                      <span id="egfrValue"> {{ egfr }}</span>
+                      <input name="egfr" type="range" class="form-range" id="egfr" min="0" max="300" step="0.001" [(ngModel)]="egfr">
+                    </div>
+                  </div>
+                  <div class="col">
+
+                  </div>
                 </div>
+
+
+
+
+
+
+
+
+
+
+
 
                 <div class="d-flex flex-column justify-content-center align-items-center mt-5">
                   <button type="submit" class="btn" style="background-color: #1B2D5A; color: white">Predict</button>
-                </div>
-                <div class="d-flex flex-column justify-content-center align-items-center mt-5">
-                  <button type="button" class="btn" style="background-color: #1B2D5A; color: white" (click)="resetValues()">Reset All</button>
                 </div>
               </form>
             </div>

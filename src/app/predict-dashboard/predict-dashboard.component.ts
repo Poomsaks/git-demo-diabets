@@ -9,14 +9,23 @@ import { Main_serviceService } from '../main_service/main_service.service';
 export class PredictDashboardComponent implements OnInit {
   text_predict: string = ''; // Initialize text_predict
 
-  Pregnancies: number = 0;
-  Glucose: number = 0;
-  BloodPressure: number = 0;
-  SkinThickness: number = 0;
-  Insulin: number = 0;
-  BMIz: number = 0;
-  DiabetesPedigreeFunction: number = 0;
-  Age: number = 0;
+  bps: number = 0;
+  bpd: number = 0;
+  bw: number = 0;
+  height: number = 0;
+  fbs: number = 0;
+  bmiz: number = 0;
+  tg: number = 0;
+  hdl: number = 0;
+  creatinine: number = 0;
+  hba1c: number = 0;
+  waist: number = 0;
+
+  fh: number = 0;
+  smoking_type_id: number = 1;
+  drinking_type_id: number = 1;
+
+  egfr: number = 0;
 
   constructor(
     private _serviceService: Main_serviceService,
@@ -24,83 +33,121 @@ export class PredictDashboardComponent implements OnInit {
   }
 
   ngOnInit() {
+    this._serviceService.authenticate().subscribe((response: any) => {
+      console.log(response.result.response);
+    });
     this.function_slider();
-    this.resetValues()
-    // this._serviceService.authenticate().subscribe((response: any) => {
-    //   // console.log(response.result.response);
-    // });
-    // // You can add initialization logic here if needed
+
+    // You can add initialization logic here if needed
   }
 
   function_slider() {
-    const Pregnancies = this.el.nativeElement.querySelector('#Pregnancies');
-    const Glucose = this.el.nativeElement.querySelector('#Glucose');
-    const BloodPressure = this.el.nativeElement.querySelector('#BloodPressure');
-    const SkinThickness = this.el.nativeElement.querySelector('#SkinThickness');
-    const Insulin = this.el.nativeElement.querySelector('#Insulin');
-    const BMIz = this.el.nativeElement.querySelector('#BMIz');
-    const DiabetesPedigreeFunction = this.el.nativeElement.querySelector('#DiabetesPedigreeFunction');
-    const Age = this.el.nativeElement.querySelector('#Age');
+    const bps = this.el.nativeElement.querySelector('#bps');
+    const bpd = this.el.nativeElement.querySelector('#bpd');
+    const bw = this.el.nativeElement.querySelector('#bw');
+    const height = this.el.nativeElement.querySelector('#height');
+    const fbs = this.el.nativeElement.querySelector('#fbs');
+    const bmiz = this.el.nativeElement.querySelector('#bmiz');
+    const tg = this.el.nativeElement.querySelector('#tg');
+    const hdl = this.el.nativeElement.querySelector('#hdl');
+    const creatinine = this.el.nativeElement.querySelector('#creatinine');
+    const hba1c = this.el.nativeElement.querySelector('#hba1c');
+    const waist = this.el.nativeElement.querySelector('#waist');
+    const egfr = this.el.nativeElement.querySelector('#egfr');
 
 
-    const PregnanciesValue = this.el.nativeElement.querySelector('#PregnanciesValue');
-    const GlucoseValue = this.el.nativeElement.querySelector('#GlucoseValue');
-    const BloodPressureValue = this.el.nativeElement.querySelector('#BloodPressureValue');
-    const SkinThicknessValue = this.el.nativeElement.querySelector('#SkinThicknessValue');
-    const InsulinValue = this.el.nativeElement.querySelector('#InsulinValue');
-    const BMIzValue = this.el.nativeElement.querySelector('#BMIzValue');
-    const DiabetesPedigreeFunctionValue = this.el.nativeElement.querySelector('#DiabetesPedigreeFunctionValue');
-    const AgeValue = this.el.nativeElement.querySelector('#AgeValue');
+    const bpsValue = this.el.nativeElement.querySelector('#bpsValue');
+    const bpdValue = this.el.nativeElement.querySelector('#bpdValue');
+    const bwValue = this.el.nativeElement.querySelector('#bwValue');
+    const heightValue = this.el.nativeElement.querySelector('#heightValue');
+    const fbsValue = this.el.nativeElement.querySelector('#fbsValue');
+    const bmizValue = this.el.nativeElement.querySelector('#bmizValue');
+    const tgValue = this.el.nativeElement.querySelector('#tgValue');
+    const hdlValue = this.el.nativeElement.querySelector('#hdlValue');
+    const creatinineValue = this.el.nativeElement.querySelector('#creatinineValue');
+    const hba1cValue = this.el.nativeElement.querySelector('#hba1cValue');
+    const waistValue = this.el.nativeElement.querySelector('#waistValue');
+    const egfrValue = this.el.nativeElement.querySelector('#egfrValue');
 
-    Pregnancies.addEventListener('input', () => {
-      PregnanciesValue.textContent = ' ' + Pregnancies.value;
+    bps.addEventListener('input', () => {
+      bpsValue.textContent = ' ' + bps.value;
     });
-    Glucose.addEventListener('input', () => {
-      GlucoseValue.textContent = ' ' + Glucose.value;
+    bpd.addEventListener('input', () => {
+      bpdValue.textContent = ' ' + bpd.value;
     });
-    BloodPressure.addEventListener('input', () => {
-      BloodPressureValue.textContent = ' ' + BloodPressure.value;
+    bw.addEventListener('input', () => {
+      bwValue.textContent = ' ' + bw.value;
     });
-    SkinThickness.addEventListener('input', () => {
-      SkinThicknessValue.textContent = ' ' + SkinThickness.value;
+    height.addEventListener('input', () => {
+      heightValue.textContent = ' ' + height.value;
     });
-    Insulin.addEventListener('input', () => {
-      InsulinValue.textContent = ' ' + Insulin.value;
+    fbs.addEventListener('input', () => {
+      fbsValue.textContent = ' ' + fbs.value;
     });
-    BMIz.addEventListener('input', () => {
-      BMIzValue.textContent = ' ' + BMIz.value;
+    bmiz.addEventListener('input', () => {
+      bmizValue.textContent = ' ' + bmiz.value;
     });
-    DiabetesPedigreeFunction.addEventListener('input', () => {
-      DiabetesPedigreeFunctionValue.textContent = ' ' + DiabetesPedigreeFunction.value;
+    tg.addEventListener('input', () => {
+      tgValue.textContent = ' ' + tg.value;
     });
-    Age.addEventListener('input', () => {
-      AgeValue.textContent = ' ' + Age.value;
+    hdl.addEventListener('input', () => {
+      hdlValue.textContent = ' ' + hdl.value;
+    });
+    creatinine.addEventListener('input', () => {
+      creatinineValue.textContent = ' ' + creatinine.value;
+    });
+    hba1c.addEventListener('input', () => {
+      hba1cValue.textContent = ' ' + hba1c.value;
+    });
+    waist.addEventListener('input', () => {
+      waistValue.textContent = ' ' + waist.value;
+    });
+    egfr.addEventListener('input', () => {
+      egfrValue.textContent = ' ' + egfr.value;
     });
 
 
 
 
 
-  }
-  resetValues() {
-    this.Pregnancies = 0;
-    this.Glucose = 0;
-    this.BloodPressure = 0;
-    this.SkinThickness = 0;
-    this.Insulin = 0;
-    this.BMIz = 0;
-    this.DiabetesPedigreeFunction = 0;
-    this.Age = 0;
   }
   submitForm() {
-    console.log("asdw");
-    this.text_predict = "asdw";
-    console.log(this.text_predict);
-
+    // console.log(this.bps);
+    // console.log(this.bpd);
+    // console.log(this.bw);
+    // console.log(this.height);
+    // console.log(this.fbs);
+    // console.log(this.bmiz);
+    // console.log(this.tg);
+    // console.log(this.hdl);
+    // console.log(this.creatinine);
+    // console.log(this.hba1c);
+    // console.log(this.fh);
+    // console.log(this.waist);
+    // console.log(this.smoking_type_id);
+    // console.log(this.drinking_type_id);
+    // console.log(this.egfr);
     // this._serviceService.per_diabets_bandung().subscribe((response: any) => {
     //   console.log(response.result.response);
     // });
-    this._serviceService.per_diabets_bandung().subscribe((response: any) => {
+    const applicationData = {
+      bps:this.bps,
+      bpd:this.bpd,
+      bw:this.bw,
+      height:this.height,
+      fbs:this.fbs,
+      bmiz:this.bmiz,
+      tg:this.tg,
+      hdl:this.hdl,
+      creatinine:this.creatinine,
+      hba1c:this.hba1c,
+      fh:this.fh,
+      waist:this.waist,
+      smoking_type_id:this.smoking_type_id,
+      drinking_type_id:this.drinking_type_id,
+      egfr:this.egfr
+    }
+    this._serviceService.per_diabets_bandung(applicationData).subscribe((response: any) => {
       console.log(response.result);
     });
 

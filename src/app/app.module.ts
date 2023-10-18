@@ -9,13 +9,15 @@ import { HttpClientModule } from '@angular/common/http';
 import { Main_serviceService } from './main_service/main_service.service';
 import { HomePageComponent } from './home-page/home-page.component';
 import { AboutPageComponent } from './about-page/about-page.component';
+import { ResultsPageComponent } from './results-page/results-page.component';
 
 @NgModule({
-  declarations: [
+  declarations: [	
     AppComponent,
     PredictDashboardComponent,
       HomePageComponent,
       AboutPageComponent,
+      ResultsPageComponent
    ],
   imports: [
     BrowserModule,
